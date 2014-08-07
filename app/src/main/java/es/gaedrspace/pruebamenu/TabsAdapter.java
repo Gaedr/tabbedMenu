@@ -7,7 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class TabsAdapter extends FragmentPagerAdapter {
 
 	public TabsAdapter(FragmentManager fm) {
-		super(fm);
+        super(fm);
 	}
 
 	@Override
@@ -15,11 +15,11 @@ public class TabsAdapter extends FragmentPagerAdapter {
 		if(index < 4) {
 			switch(index) {
 			case 0:
-				return CustomFragment.newInstance("Texto de la pestaña 1.");
+				return CustomFragment.newInstance("こんにちわ！！");
 			case 1:
-				return CustomFragment.newInstance("Texto de la pestaña 2.");
+				return CustomFragment.newInstance("二番 Fragment");
 			case 2:
-				return CustomFragment.newInstance("Texto de la pestaña 3.");
+				return CustomFragment.newInstance("This is the third tab");
 			}
 		}
 		return null;
@@ -27,7 +27,7 @@ public class TabsAdapter extends FragmentPagerAdapter {
 
 	@Override
 	public int getCount() {
-		return 3;
+        return 3;
 	}
 
 }

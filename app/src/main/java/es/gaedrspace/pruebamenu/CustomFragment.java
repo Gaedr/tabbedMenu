@@ -8,16 +8,17 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class CustomFragment extends Fragment {
-	private final static String KEY_REG_TEXT = "texto";
+	private final static String TEXT = "texto";
 
 	public static CustomFragment newInstance(String text) {
 		CustomFragment frag = new CustomFragment();
 
 		Bundle args = frag.getArguments();
-		if (args == null)
-			args = new Bundle();
+		if (args == null) {
+            args = new Bundle();
+        }
 
-		args.putString(KEY_REG_TEXT, text);
+		args.putString(TEXT, text);
 
 		frag.setArguments(args);
 
@@ -28,7 +29,7 @@ public class CustomFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.tab1, container,false);
 		TextView tvText =  (TextView)rootView.findViewById(R.id.tvText);
-		String text = getArguments().getString(KEY_REG_TEXT);
+		String text = getArguments().getString(TEXT);
 		tvText.setText(text);
 		return rootView;
 	}
