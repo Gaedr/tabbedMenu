@@ -25,18 +25,11 @@ public class CustomFragment extends Fragment {
 	}
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// Inflamos la Vista que se debe mostrar en pantalla.
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.tab1, container,false);
-		// Creamos instancia del TextView.
 		TextView tvText =  (TextView)rootView.findViewById(R.id.tvText);
-		// Recogemos el texto que guardamos al crear el Fragment.
 		String text = getArguments().getString(KEY_REG_TEXT);
-		// Mostramos el texto en el TextView.
 		tvText.setText(text);
-		
-		// Devolvemos la vista para que se muestre en pantalla.
 		return rootView;
 	}
 
